@@ -20,7 +20,7 @@ import ChildrenList from './Components/ChildrenList/ChildrenList';
 const ProtectedRoute = ({ children, user, userRole, allowedRoles }) => {
   if (!user) {
     // Agar foydalanuvchi tizimga kirmagan bo'lsa, avtorizatsiya sahifasiga yo'naltiramiz
-    return <Navigate to="/login" replace />; 
+    return <Navigate to="/login" />; 
   }
 
   if (allowedRoles && !allowedRoles.includes(userRole)) {
@@ -103,7 +103,7 @@ function App() {
           <Route path="/kindergarten/:groupId/children" element={<ChildrenList />} />
 
           {/* ✅ Yagona PickupStatus komponenti, Childstatus o'rniga */}
-          <Route path="/pickup-status/:requestId" element={<PickupStatus />} />
+          {/* <Route path="/pickup-status/:requestId" element={<PickupStatus />} /> */}
 
           {/* ✅ Tizimga kirish talab qiladigan sahifa, masalan */}
 
